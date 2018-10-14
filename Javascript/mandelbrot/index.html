@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Mandelbrot</title>
+</head>
+<body onload='onBodyLoad()'>
+<div id="main_container">
+
+    <div id='option_dialog'>
+        <h1 style="text-align: center">Mandelbrot</h1>
+        <div id="spinner_container">
+            <div><b>Resolution of Manelbrot</b></div>
+            <span class="spinner_label" id="min_label">rough (faster)</span>
+            <input type="range" id='slider'>
+            <span class="spinner_label" id="max_label">smooth (slower)</span>
+        </div>
+
+        <table>
+            <tr>
+                <td>Escape Iterations</td>
+                <td><input type="number" placeholder="infinity check integer" id='infinity_iteration_field'></td>
+            </tr>
+            <tr>
+                <td>Escape Radius</td>
+                <td> <input type="number" placeholder="radius" id='radius_field'></td>
+            </tr>
+            <tr>
+                <td>Color Scheme</td>
+                <td><select id='color_scheme_select'></select></td>
+            </tr>
+        </table>
+    
+        <button type='button' onclick='drawMandelbrotButtonPressed()'>Draw Mandelbrot</button>
+        <div id ="disclaimer">*You may have to try multiple times for good results in <b>Surprise Me</b> Option</div>
+</div>
+
+<div id="canvas_container">
+    <img src="loader.gif" alt="loading..." id="loader">
+    <canvas id='mandelbrot_canvas' height='800' width='800'></canvas>
+</div>
+</div>
+</body>
+<script src='src/dom-handling.js' async></script>
+<script src='src/color-scheme.js' async></script>
+<script src='src/color-utilities.js' async></script>
+<script src='src/app.js' async></script>
+<link rel="stylesheet" href="style.css">
+
+</html>
